@@ -1,24 +1,21 @@
-def checkPrime(num):
+# Python3 code to demonstrate 
+# Sum of number digits in List
+# using loop + str()
 
-    #  0, 1 and negative numbers are not prime
-    if num < 2:
-        return 0
-    else:
+# Initializing list
+test_list = [12, 67, 98, 34]
 
-        # no need to run loop till num-1 as for any number x the numbers in
-        # the range(num/2 + 1, num) won't be divisible anyway
-        # Example 36 won't be divisible by anything b/w 19-35
+# printing original list
+print("The original list is : " + str(test_list))
 
-        x = num // 2
-        for j in range(2, x + 1):
-            if num % j == 0:
-                return 0
-
-    # the number would be prime if we reach here
-    return 1
-
-
-a, b = 1, 100
-for i in range(a, b + 1):
-    if checkPrime(i):
-        print(i, end=" ")
+# Sum of number digits in List
+# using loop + str()
+res = []
+for ele in test_list:
+	sum = 0
+	for digit in str(ele):
+		sum += int(digit)
+	res.append(sum)
+	
+# printing result 
+print ("List Integer Summation : " + str(res))
