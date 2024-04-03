@@ -1,21 +1,23 @@
-# Python3 code to demonstrate 
-# Sum of number digits in List
-# using loop + str()
-
-# Initializing list
-test_list = [12, 67, 98, 34]
-
-# printing original list
-print("The original list is : " + str(test_list))
-
-# Sum of number digits in List
-# using loop + str()
-res = []
-for ele in test_list:
-	sum = 0
-	for digit in str(ele):
-		sum += int(digit)
-	res.append(sum)
+# Selection Sort algorithm in Python
+def selectionSort(array, size):
 	
-# printing result 
-print ("List Integer Summation : " + str(res))
+	for s in range(size):
+		min_idx = s
+		
+		for i in range(s + 1, size):
+			
+			# For sorting in descending order
+			# for minimum element in each loop
+			if array[i] < array[min_idx]:
+				min_idx = i
+
+		# Arranging min at the correct position
+		(array[s], array[min_idx]) = (array[min_idx], array[s])
+
+# Driver code
+data = [ 7, 2, 1, 6 ]
+size = len(data)
+selectionSort(data, size)
+
+print('Sorted Array in Ascending Order is :')
+print(data)
